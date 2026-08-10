@@ -169,8 +169,21 @@
     .fade-up,.fade-left,.fade-right,.img-reveal{opacity:1; transform:none; transition:none;}
     *{scroll-behavior:auto;}
   }
-  .btn-primary{position:relative; overflow:hidden; background:linear-gradient(135deg, #F59E0B 0%, #D97706 100%); color:#0A1140; font-weight:700; transition:background .2s ease, transform .15s ease, box-shadow .2s ease; box-shadow:0 4px 14px rgba(245,158,11,.35);}
-  .btn-primary:hover{background:linear-gradient(135deg, #FBBF24 0%, #EA580C 100%); transform:translateY(-2px); box-shadow:0 8px 22px rgba(245,158,11,.45);}
+  .btn-primary{
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+    line-height:1.25;
+    position:relative;
+    overflow:hidden;
+    background:linear-gradient(135deg, #F59E0B 0%, #D97706 100%);
+    color:#0A1140;
+    font-weight:700;
+    transition:background .2s ease, transform .15s ease, box-shadow .2s ease;
+    box-shadow:0 4px 14px rgba(245,158,11,.35);
+  }
+  .btn-primary:hover{background:linear-gradient(135deg, #FBBF24 0%, #EA580C 100%); transform:translateY(-2px); box-shadow:0 8px 22px rgba(245,158,11,.45); color:#0A1140;}
   .btn-primary::after{
     content:'';
     position:absolute;
@@ -179,6 +192,7 @@
     background:linear-gradient(115deg, transparent, rgba(255,255,255,.65), transparent);
     transform:skewX(-20deg);
     animation: btn-shine 3.2s ease-in-out infinite;
+    pointer-events:none;
   }
   @keyframes btn-shine{
     0%{left:-75%;}
@@ -188,7 +202,17 @@
   @media (prefers-reduced-motion: reduce){
     .btn-primary::after{animation:none; display:none;}
   }
-  .btn-outline{border:2px solid var(--navy-900); color:var(--navy-900); font-weight:600; transition:all .2s ease;}
+  .btn-outline{
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+    line-height:1.25;
+    border:2px solid var(--navy-900);
+    color:var(--navy-900);
+    font-weight:600;
+    transition:all .2s ease;
+  }
   .btn-outline:hover{background:var(--navy-900); color:#fff;}
   input:focus, select:focus{outline:2px solid var(--gold-500); outline-offset:1px;}
   .counter{font-family:'Poppins',sans-serif;}
@@ -740,7 +764,7 @@
         <h4 class="font-bold text-white text-lg mb-1">STEM OPT Advantage</h4>
         <p class="text-white/70 text-sm">STEM graduates get 3 years of US work experience (12-month OPT + 24-month extension) — dramatically improving H-1B sponsorship chances. F-1 → OPT → H-1B.</p>
       </div>
-      <a href="#hero-form" class="btn-primary px-6 py-3 rounded-full text-sm whitespace-nowrap">Find My Course</a>
+      <a href="#hero-form" class="btn-primary px-7 py-3.5 rounded-full text-sm whitespace-nowrap shrink-0">Find My Course</a>
     </div>
   </div>
 </section>
