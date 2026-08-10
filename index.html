@@ -1330,18 +1330,22 @@ END TESTIMONIALS SECTION
         body: JSON.stringify(payload)
       });
 
-      // Success feedback
-      feedback.textContent = '✓ Thank you! Your request has been recorded. Our USA expert will contact you within 24 hours.';
+      // Success feedback & smooth redirect to Thank You page
+      feedback.textContent = '✓ Request recorded! Redirecting...';
       feedback.className = 'block bg-emerald-500/20 text-emerald-300 border border-emerald-500/30 text-xs text-center py-2.5 px-3 rounded-lg font-medium';
       
       form.reset();
-      getUtmData();
+      
+      // Redirect to Thank You page with search params
+      setTimeout(() => {
+        window.location.href = 'thank-you.html' + (window.location.search || '');
+      }, 700);
     } catch (err) {
       console.error('Submission error:', err);
-      feedback.textContent = '✓ Thank you! Your request has been recorded. Our counsellor will call you shortly.';
-      feedback.className = 'block bg-emerald-500/20 text-emerald-300 border border-emerald-500/30 text-xs text-center py-2.5 px-3 rounded-lg font-medium';
-      form.reset();
-      getUtmData();
+      // Fallback redirect even in catch
+      setTimeout(() => {
+        window.location.href = 'thank-you.html' + (window.location.search || '');
+      }, 700);
     } finally {
       submitBtn.disabled = false;
       btnText.textContent = 'Get Free Counselling';
