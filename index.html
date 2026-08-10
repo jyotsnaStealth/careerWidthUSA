@@ -356,7 +356,6 @@
           <input type="hidden" name="utm_campaign" id="utm_campaign" value="">
           <input type="hidden" name="utm_term" id="utm_term" value="">
           <input type="hidden" name="utm_content" id="utm_content" value="">
-          <input type="hidden" name="page_url" id="page_url" value="">
 
           <button type="submit" id="submit-btn" class="btn-primary w-full rounded-full py-3.5 text-sm mt-1 flex items-center justify-center gap-2">
             <span id="btn-text">Get Free Counselling</span>
@@ -1169,9 +1168,6 @@ END TESTIMONIALS SECTION
         if (el) el.value = val;
       }
     });
-
-    const pageUrlEl = document.getElementById('page_url');
-    if (pageUrlEl) pageUrlEl.value = window.location.href;
   }
 
   // Populate UTMs on page load & on hash change
@@ -1218,7 +1214,6 @@ END TESTIMONIALS SECTION
     });
 
     postData.set('country', 'USA');
-    postData.set('page_url', window.location.href);
     postData.set('timestamp', new Date().toLocaleString('en-IN', { timeZone: 'Asia/Kolkata' }));
     postData.set('sheet_name', 'Study USA LP');
 
