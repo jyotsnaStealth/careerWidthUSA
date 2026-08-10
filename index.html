@@ -1320,37 +1320,25 @@ END TESTIMONIALS SECTION
     const queryParams = new URLSearchParams(payload).toString();
     const targetUrl = GOOGLE_SCRIPT_URL + (GOOGLE_SCRIPT_URL.includes('?') ? '&' : '?') + queryParams;
 
-    try {
-      await fetch(targetUrl, {
-        method: 'POST',
-        mode: 'no-cors',
-        headers: {
-          'Content-Type': 'application/json'
-        },
-        body: JSON.stringify(payload)
-      });
+    // Fire background request with keepalive: true (browser guarantees delivery even during navigation)
+    fetch(targetUrl, {
+      method: 'POST',
+      mode: 'no-cors',
+      keepalive: true,
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(payload)
+    }).catch(err => console.error('Submission background log:', err));
 
-      // Success feedback & smooth redirect to Thank You page
-      feedback.textContent = '✓ Request recorded! Redirecting...';
-      feedback.className = 'block bg-emerald-500/20 text-emerald-300 border border-emerald-500/30 text-xs text-center py-2.5 px-3 rounded-lg font-medium';
-      
-      form.reset();
-      
-      // Redirect to Thank You page with search params
-      setTimeout(() => {
-        window.location.href = 'thank-you.html' + (window.location.search || '');
-      }, 700);
-    } catch (err) {
-      console.error('Submission error:', err);
-      // Fallback redirect even in catch
-      setTimeout(() => {
-        window.location.href = 'thank-you.html' + (window.location.search || '');
-      }, 700);
-    } finally {
-      submitBtn.disabled = false;
-      btnText.textContent = 'Get Free Counselling';
-      btnLoader.classList.add('hidden');
-    }
+    // Show immediate feedback & redirect within 1s
+    feedback.textContent = '✓ Request recorded! Redirecting...';
+    feedback.className = 'block bg-emerald-500/20 text-emerald-300 border border-emerald-500/30 text-xs text-center py-2.5 px-3 rounded-lg font-medium';
+    form.reset();
+
+    setTimeout(() => {
+      window.location.href = 'thank-you.html' + (window.location.search || '');
+    }, 850);
 
     return false;
   }
