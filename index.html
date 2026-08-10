@@ -517,114 +517,186 @@
     <!-- 8 Ivy League Cards Grid -->
     <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-5 mb-14">
       <!-- Harvard -->
-      <div class="bg-white/5 border border-white/10 hover:border-amber-400/50 rounded-2xl p-5 backdrop-blur transition duration-300 hover:-translate-y-1 fade-up">
-        <div class="flex items-center justify-between mb-3">
-          <span class="text-xs font-bold text-amber-400 bg-amber-400/10 px-2.5 py-1 rounded-md">#4 Global</span>
-          <span class="text-xs text-white/50">Cambridge, MA</span>
+      <div class="group bg-white/5 border border-white/10 hover:border-amber-400/60 rounded-2xl overflow-hidden backdrop-blur transition duration-300 hover:-translate-y-1.5 hover:shadow-2xl fade-up flex flex-col">
+        <div class="relative h-36 overflow-hidden">
+          <img src="https://images.unsplash.com/photo-1622397815608-f1c50bb4db19?auto=format&fit=crop&w=600&q=80" alt="Harvard University Campus" loading="lazy" class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
+          <div class="absolute inset-0 bg-gradient-to-t from-[#0A1140] via-[#0A1140]/50 to-transparent"></div>
+          <div class="absolute top-3 left-3 bg-[#A51C30] text-white text-[11px] font-bold px-2.5 py-1 rounded-md shadow flex items-center gap-1.5">
+            <span>🏛️</span> Harvard
+          </div>
+          <span class="absolute top-3 right-3 text-[11px] font-bold text-amber-300 bg-black/60 backdrop-blur px-2.5 py-1 rounded-md border border-amber-400/30">#4 Global</span>
         </div>
-        <h4 class="font-display font-bold text-lg text-white mb-1">Harvard University</h4>
-        <p class="text-xs text-white/60 mb-3">World's #1 endowment ($50B+). Renowned for MBA, Law, Medicine, CS & Economics.</p>
-        <div class="pt-2 border-t border-white/10 flex justify-between text-[11px] text-white/70">
-          <span>Acceptance: ~3.4%</span>
-          <span class="text-amber-300 font-semibold">100% Need-Blind</span>
+        <div class="p-5 pt-3 flex-1 flex flex-col justify-between">
+          <div>
+            <div class="text-xs text-amber-400 font-semibold mb-1">Cambridge, Massachusetts</div>
+            <h4 class="font-display font-bold text-lg text-white mb-2 group-hover:text-amber-300 transition">Harvard University</h4>
+            <p class="text-xs text-white/65 leading-relaxed mb-4">World's #1 endowment ($50B+). Global leader in MBA, Medicine, Law, Economics & CS.</p>
+          </div>
+          <div class="pt-3 border-t border-white/10 flex justify-between items-center text-[11px] text-white/80">
+            <span>Acceptance: <strong class="text-white">~3.4%</strong></span>
+            <span class="text-amber-300 font-semibold bg-amber-400/10 px-2 py-0.5 rounded">100% Need-Blind</span>
+          </div>
         </div>
       </div>
 
       <!-- Princeton -->
-      <div class="bg-white/5 border border-white/10 hover:border-amber-400/50 rounded-2xl p-5 backdrop-blur transition duration-300 hover:-translate-y-1 fade-up">
-        <div class="flex items-center justify-between mb-3">
-          <span class="text-xs font-bold text-amber-400 bg-amber-400/10 px-2.5 py-1 rounded-md">#1 US News</span>
-          <span class="text-xs text-white/50">Princeton, NJ</span>
+      <div class="group bg-white/5 border border-white/10 hover:border-amber-400/60 rounded-2xl overflow-hidden backdrop-blur transition duration-300 hover:-translate-y-1.5 hover:shadow-2xl fade-up flex flex-col">
+        <div class="relative h-36 overflow-hidden">
+          <img src="https://images.unsplash.com/photo-1541339907198-e08756dedf3f?auto=format&fit=crop&w=600&q=80" alt="Princeton University Campus" loading="lazy" class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
+          <div class="absolute inset-0 bg-gradient-to-t from-[#0A1140] via-[#0A1140]/50 to-transparent"></div>
+          <div class="absolute top-3 left-3 bg-[#E77500] text-white text-[11px] font-bold px-2.5 py-1 rounded-md shadow flex items-center gap-1.5">
+            <span>🐅</span> Princeton
+          </div>
+          <span class="absolute top-3 right-3 text-[11px] font-bold text-amber-300 bg-black/60 backdrop-blur px-2.5 py-1 rounded-md border border-amber-400/30">#1 US News</span>
         </div>
-        <h4 class="font-display font-bold text-lg text-white mb-1">Princeton University</h4>
-        <p class="text-xs text-white/60 mb-3">Global leader in Engineering, Public Policy, Mathematics, Physics & AI research.</p>
-        <div class="pt-2 border-t border-white/10 flex justify-between text-[11px] text-white/70">
-          <span>Acceptance: ~4.5%</span>
-          <span class="text-amber-300 font-semibold">No-Loan Aid</span>
+        <div class="p-5 pt-3 flex-1 flex flex-col justify-between">
+          <div>
+            <div class="text-xs text-amber-400 font-semibold mb-1">Princeton, New Jersey</div>
+            <h4 class="font-display font-bold text-lg text-white mb-2 group-hover:text-amber-300 transition">Princeton University</h4>
+            <p class="text-xs text-white/65 leading-relaxed mb-4">Elite engineering, Public Policy (SPIA), Theoretical Physics, Mathematics & AI research.</p>
+          </div>
+          <div class="pt-3 border-t border-white/10 flex justify-between items-center text-[11px] text-white/80">
+            <span>Acceptance: <strong class="text-white">~4.5%</strong></span>
+            <span class="text-amber-300 font-semibold bg-amber-400/10 px-2 py-0.5 rounded">No-Loan Aid</span>
+          </div>
         </div>
       </div>
 
       <!-- Yale -->
-      <div class="bg-white/5 border border-white/10 hover:border-amber-400/50 rounded-2xl p-5 backdrop-blur transition duration-300 hover:-translate-y-1 fade-up">
-        <div class="flex items-center justify-between mb-3">
-          <span class="text-xs font-bold text-amber-400 bg-amber-400/10 px-2.5 py-1 rounded-md">#5 US News</span>
-          <span class="text-xs text-white/50">New Haven, CT</span>
+      <div class="group bg-white/5 border border-white/10 hover:border-amber-400/60 rounded-2xl overflow-hidden backdrop-blur transition duration-300 hover:-translate-y-1.5 hover:shadow-2xl fade-up flex flex-col">
+        <div class="relative h-36 overflow-hidden">
+          <img src="https://images.unsplash.com/photo-1590012314607-cda9d9b699ae?auto=format&fit=crop&w=600&q=80" alt="Yale University Campus" loading="lazy" class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
+          <div class="absolute inset-0 bg-gradient-to-t from-[#0A1140] via-[#0A1140]/50 to-transparent"></div>
+          <div class="absolute top-3 left-3 bg-[#00356B] text-white text-[11px] font-bold px-2.5 py-1 rounded-md shadow flex items-center gap-1.5 border border-white/20">
+            <span>🏛️</span> Yale
+          </div>
+          <span class="absolute top-3 right-3 text-[11px] font-bold text-amber-300 bg-black/60 backdrop-blur px-2.5 py-1 rounded-md border border-amber-400/30">#5 US News</span>
         </div>
-        <h4 class="font-display font-bold text-lg text-white mb-1">Yale University</h4>
-        <p class="text-xs text-white/60 mb-3">Prestigious Yale Law, School of Management, Economics, Global Affairs & Humanities.</p>
-        <div class="pt-2 border-t border-white/10 flex justify-between text-[11px] text-white/70">
-          <span>Acceptance: ~4.4%</span>
-          <span class="text-amber-300 font-semibold">Full Aid Available</span>
+        <div class="p-5 pt-3 flex-1 flex flex-col justify-between">
+          <div>
+            <div class="text-xs text-amber-400 font-semibold mb-1">New Haven, Connecticut</div>
+            <h4 class="font-display font-bold text-lg text-white mb-2 group-hover:text-amber-300 transition">Yale University</h4>
+            <p class="text-xs text-white/65 leading-relaxed mb-4">World-renowned Yale Law School, School of Management, Economics & Global Affairs.</p>
+          </div>
+          <div class="pt-3 border-t border-white/10 flex justify-between items-center text-[11px] text-white/80">
+            <span>Acceptance: <strong class="text-white">~4.4%</strong></span>
+            <span class="text-amber-300 font-semibold bg-amber-400/10 px-2 py-0.5 rounded">Full Aid Avail.</span>
+          </div>
         </div>
       </div>
 
       <!-- Columbia -->
-      <div class="bg-white/5 border border-white/10 hover:border-amber-400/50 rounded-2xl p-5 backdrop-blur transition duration-300 hover:-translate-y-1 fade-up">
-        <div class="flex items-center justify-between mb-3">
-          <span class="text-xs font-bold text-amber-400 bg-amber-400/10 px-2.5 py-1 rounded-md">NYC Campus</span>
-          <span class="text-xs text-white/50">New York, NY</span>
+      <div class="group bg-white/5 border border-white/10 hover:border-amber-400/60 rounded-2xl overflow-hidden backdrop-blur transition duration-300 hover:-translate-y-1.5 hover:shadow-2xl fade-up flex flex-col">
+        <div class="relative h-36 overflow-hidden">
+          <img src="https://images.unsplash.com/photo-1576495199011-eb94736d05d6?auto=format&fit=crop&w=600&q=80" alt="Columbia University Campus" loading="lazy" class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
+          <div class="absolute inset-0 bg-gradient-to-t from-[#0A1140] via-[#0A1140]/50 to-transparent"></div>
+          <div class="absolute top-3 left-3 bg-[#1D70B8] text-white text-[11px] font-bold px-2.5 py-1 rounded-md shadow flex items-center gap-1.5">
+            <span>🗽</span> Columbia
+          </div>
+          <span class="absolute top-3 right-3 text-[11px] font-bold text-amber-300 bg-black/60 backdrop-blur px-2.5 py-1 rounded-md border border-amber-400/30">NYC Campus</span>
         </div>
-        <h4 class="font-display font-bold text-lg text-white mb-1">Columbia University</h4>
-        <p class="text-xs text-white/60 mb-3">Wall Street & Tech powerhouse. MS Data Science, Business, Journalism & Engineering.</p>
-        <div class="pt-2 border-t border-white/10 flex justify-between text-[11px] text-white/70">
-          <span>Acceptance: ~3.9%</span>
-          <span class="text-amber-300 font-semibold">NYC Network</span>
+        <div class="p-5 pt-3 flex-1 flex flex-col justify-between">
+          <div>
+            <div class="text-xs text-amber-400 font-semibold mb-1">New York City, NY</div>
+            <h4 class="font-display font-bold text-lg text-white mb-2 group-hover:text-amber-300 transition">Columbia University</h4>
+            <p class="text-xs text-white/65 leading-relaxed mb-4">Direct access to Wall Street & Silicon Alley. Flagship MS CS, Data Science & Finance.</p>
+          </div>
+          <div class="pt-3 border-t border-white/10 flex justify-between items-center text-[11px] text-white/80">
+            <span>Acceptance: <strong class="text-white">~3.9%</strong></span>
+            <span class="text-amber-300 font-semibold bg-amber-400/10 px-2 py-0.5 rounded">NYC Network</span>
+          </div>
         </div>
       </div>
 
       <!-- UPenn Wharton -->
-      <div class="bg-white/5 border border-white/10 hover:border-amber-400/50 rounded-2xl p-5 backdrop-blur transition duration-300 hover:-translate-y-1 fade-up">
-        <div class="flex items-center justify-between mb-3">
-          <span class="text-xs font-bold text-amber-400 bg-amber-400/10 px-2.5 py-1 rounded-md">#1 Wharton</span>
-          <span class="text-xs text-white/50">Philadelphia, PA</span>
+      <div class="group bg-white/5 border border-white/10 hover:border-amber-400/60 rounded-2xl overflow-hidden backdrop-blur transition duration-300 hover:-translate-y-1.5 hover:shadow-2xl fade-up flex flex-col">
+        <div class="relative h-36 overflow-hidden">
+          <img src="https://images.unsplash.com/photo-1562774053-701939374585?auto=format&fit=crop&w=600&q=80" alt="UPenn Wharton Campus" loading="lazy" class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
+          <div class="absolute inset-0 bg-gradient-to-t from-[#0A1140] via-[#0A1140]/50 to-transparent"></div>
+          <div class="absolute top-3 left-3 bg-[#011F5B] text-white text-[11px] font-bold px-2.5 py-1 rounded-md shadow flex items-center gap-1.5 border border-white/20">
+            <span>💼</span> UPenn
+          </div>
+          <span class="absolute top-3 right-3 text-[11px] font-bold text-amber-300 bg-black/60 backdrop-blur px-2.5 py-1 rounded-md border border-amber-400/30">#1 Wharton</span>
         </div>
-        <h4 class="font-display font-bold text-lg text-white mb-1">Univ. of Pennsylvania</h4>
-        <p class="text-xs text-white/60 mb-3">Home to the Wharton School of Business, Bioengineering, CS & Applied Science.</p>
-        <div class="pt-2 border-t border-white/10 flex justify-between text-[11px] text-white/70">
-          <span>Acceptance: ~5.9%</span>
-          <span class="text-amber-300 font-semibold">Top Wall St. Recruiter</span>
+        <div class="p-5 pt-3 flex-1 flex flex-col justify-between">
+          <div>
+            <div class="text-xs text-amber-400 font-semibold mb-1">Philadelphia, Pennsylvania</div>
+            <h4 class="font-display font-bold text-lg text-white mb-2 group-hover:text-amber-300 transition">Univ. of Pennsylvania</h4>
+            <p class="text-xs text-white/65 leading-relaxed mb-4">Home to Wharton School, world-leading Bioengineering, Fintech & Applied Science.</p>
+          </div>
+          <div class="pt-3 border-t border-white/10 flex justify-between items-center text-[11px] text-white/80">
+            <span>Acceptance: <strong class="text-white">~5.9%</strong></span>
+            <span class="text-amber-300 font-semibold bg-amber-400/10 px-2 py-0.5 rounded">Top Wall St.</span>
+          </div>
         </div>
       </div>
 
       <!-- Cornell -->
-      <div class="bg-white/5 border border-white/10 hover:border-amber-400/50 rounded-2xl p-5 backdrop-blur transition duration-300 hover:-translate-y-1 fade-up">
-        <div class="flex items-center justify-between mb-3">
-          <span class="text-xs font-bold text-amber-400 bg-amber-400/10 px-2.5 py-1 rounded-md">#16 Global</span>
-          <span class="text-xs text-white/50">Ithaca, NY</span>
+      <div class="group bg-white/5 border border-white/10 hover:border-amber-400/60 rounded-2xl overflow-hidden backdrop-blur transition duration-300 hover:-translate-y-1.5 hover:shadow-2xl fade-up flex flex-col">
+        <div class="relative h-36 overflow-hidden">
+          <img src="https://images.unsplash.com/photo-1523050854058-8df90110c9f1?auto=format&fit=crop&w=600&q=80" alt="Cornell University Campus" loading="lazy" class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
+          <div class="absolute inset-0 bg-gradient-to-t from-[#0A1140] via-[#0A1140]/50 to-transparent"></div>
+          <div class="absolute top-3 left-3 bg-[#B31B1B] text-white text-[11px] font-bold px-2.5 py-1 rounded-md shadow flex items-center gap-1.5">
+            <span>🎓</span> Cornell
+          </div>
+          <span class="absolute top-3 right-3 text-[11px] font-bold text-amber-300 bg-black/60 backdrop-blur px-2.5 py-1 rounded-md border border-amber-400/30">#16 Global</span>
         </div>
-        <h4 class="font-display font-bold text-lg text-white mb-1">Cornell University</h4>
-        <p class="text-xs text-white/60 mb-3">Largest Ivy League institution. Renowned for Computer Science, Mech. Engg. & Cornell Tech NYC.</p>
-        <div class="pt-2 border-t border-white/10 flex justify-between text-[11px] text-white/70">
-          <span>Acceptance: ~7.3%</span>
-          <span class="text-amber-300 font-semibold">STEM Leader</span>
+        <div class="p-5 pt-3 flex-1 flex flex-col justify-between">
+          <div>
+            <div class="text-xs text-amber-400 font-semibold mb-1">Ithaca, New York</div>
+            <h4 class="font-display font-bold text-lg text-white mb-2 group-hover:text-amber-300 transition">Cornell University</h4>
+            <p class="text-xs text-white/65 leading-relaxed mb-4">Largest Ivy League campus & Cornell Tech NYC. Top Computer Science & Engineering.</p>
+          </div>
+          <div class="pt-3 border-t border-white/10 flex justify-between items-center text-[11px] text-white/80">
+            <span>Acceptance: <strong class="text-white">~7.3%</strong></span>
+            <span class="text-amber-300 font-semibold bg-amber-400/10 px-2 py-0.5 rounded">STEM Leader</span>
+          </div>
         </div>
       </div>
 
       <!-- Brown -->
-      <div class="bg-white/5 border border-white/10 hover:border-amber-400/50 rounded-2xl p-5 backdrop-blur transition duration-300 hover:-translate-y-1 fade-up">
-        <div class="flex items-center justify-between mb-3">
-          <span class="text-xs font-bold text-amber-400 bg-amber-400/10 px-2.5 py-1 rounded-md">Open Curriculum</span>
-          <span class="text-xs text-white/50">Providence, RI</span>
+      <div class="group bg-white/5 border border-white/10 hover:border-amber-400/60 rounded-2xl overflow-hidden backdrop-blur transition duration-300 hover:-translate-y-1.5 hover:shadow-2xl fade-up flex flex-col">
+        <div class="relative h-36 overflow-hidden">
+          <img src="https://images.unsplash.com/photo-1498243691581-b145c3f54a5a?auto=format&fit=crop&w=600&q=80" alt="Brown University Campus" loading="lazy" class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
+          <div class="absolute inset-0 bg-gradient-to-t from-[#0A1140] via-[#0A1140]/50 to-transparent"></div>
+          <div class="absolute top-3 left-3 bg-[#4E3629] text-white text-[11px] font-bold px-2.5 py-1 rounded-md shadow flex items-center gap-1.5 border border-white/20">
+            <span>🐻</span> Brown
+          </div>
+          <span class="absolute top-3 right-3 text-[11px] font-bold text-amber-300 bg-black/60 backdrop-blur px-2.5 py-1 rounded-md border border-amber-400/30">Open Curric.</span>
         </div>
-        <h4 class="font-display font-bold text-lg text-white mb-1">Brown University</h4>
-        <p class="text-xs text-white/60 mb-3">Flexible interdisciplinary learning, Applied Mathematics, Computer Science & Medicine.</p>
-        <div class="pt-2 border-t border-white/10 flex justify-between text-[11px] text-white/70">
-          <span>Acceptance: ~5.0%</span>
-          <span class="text-amber-300 font-semibold">High ROI</span>
+        <div class="p-5 pt-3 flex-1 flex flex-col justify-between">
+          <div>
+            <div class="text-xs text-amber-400 font-semibold mb-1">Providence, Rhode Island</div>
+            <h4 class="font-display font-bold text-lg text-white mb-2 group-hover:text-amber-300 transition">Brown University</h4>
+            <p class="text-xs text-white/65 leading-relaxed mb-4">Legendary Open Curriculum. Applied Mathematics, AI, Bioengineering & Medicine.</p>
+          </div>
+          <div class="pt-3 border-t border-white/10 flex justify-between items-center text-[11px] text-white/80">
+            <span>Acceptance: <strong class="text-white">~5.0%</strong></span>
+            <span class="text-amber-300 font-semibold bg-amber-400/10 px-2 py-0.5 rounded">Flexible Path</span>
+          </div>
         </div>
       </div>
 
       <!-- Dartmouth -->
-      <div class="bg-white/5 border border-white/10 hover:border-amber-400/50 rounded-2xl p-5 backdrop-blur transition duration-300 hover:-translate-y-1 fade-up">
-        <div class="flex items-center justify-between mb-3">
-          <span class="text-xs font-bold text-amber-400 bg-amber-400/10 px-2.5 py-1 rounded-md">Tuck School</span>
-          <span class="text-xs text-white/50">Hanover, NH</span>
+      <div class="group bg-white/5 border border-white/10 hover:border-amber-400/60 rounded-2xl overflow-hidden backdrop-blur transition duration-300 hover:-translate-y-1.5 hover:shadow-2xl fade-up flex flex-col">
+        <div class="relative h-36 overflow-hidden">
+          <img src="https://images.unsplash.com/photo-1607237138185-eedd9c632b0b?auto=format&fit=crop&w=600&q=80" alt="Dartmouth College Campus" loading="lazy" class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
+          <div class="absolute inset-0 bg-gradient-to-t from-[#0A1140] via-[#0A1140]/50 to-transparent"></div>
+          <div class="absolute top-3 left-3 bg-[#00693E] text-white text-[11px] font-bold px-2.5 py-1 rounded-md shadow flex items-center gap-1.5">
+            <span>🌲</span> Dartmouth
+          </div>
+          <span class="absolute top-3 right-3 text-[11px] font-bold text-amber-300 bg-black/60 backdrop-blur px-2.5 py-1 rounded-md border border-amber-400/30">Tuck MBA</span>
         </div>
-        <h4 class="font-display font-bold text-lg text-white mb-1">Dartmouth College</h4>
-        <p class="text-xs text-white/60 mb-3">Intimate faculty mentoring, Tuck MBA, Thayer School of Engineering & Liberal Arts.</p>
-        <div class="pt-2 border-t border-white/10 flex justify-between text-[11px] text-white/70">
-          <span>Acceptance: ~6.2%</span>
-          <span class="text-amber-300 font-semibold">Alumni Loyalty #1</span>
+        <div class="p-5 pt-3 flex-1 flex flex-col justify-between">
+          <div>
+            <div class="text-xs text-amber-400 font-semibold mb-1">Hanover, New Hampshire</div>
+            <h4 class="font-display font-bold text-lg text-white mb-2 group-hover:text-amber-300 transition">Dartmouth College</h4>
+            <p class="text-xs text-white/65 leading-relaxed mb-4">Intimate faculty mentorship, Tuck School of Business & Thayer School of Engineering.</p>
+          </div>
+          <div class="pt-3 border-t border-white/10 flex justify-between items-center text-[11px] text-white/80">
+            <span>Acceptance: <strong class="text-white">~6.2%</strong></span>
+            <span class="text-amber-300 font-semibold bg-amber-400/10 px-2 py-0.5 rounded">#1 Loyalty</span>
+          </div>
         </div>
       </div>
     </div>
@@ -1179,18 +1251,25 @@ END TESTIMONIALS SECTION
       if (el && utms[k]) el.value = utms[k];
     }
 
-    // 4. Referrer detection fallback if source is still empty
-    if (!utms.utm_source && document.referrer) {
-      try {
-        const refHost = new URL(document.referrer).hostname;
-        if (refHost.includes('google')) { utms.utm_source = 'google'; utms.utm_medium = 'organic'; }
-        else if (refHost.includes('facebook') || refHost.includes('fb.me')) { utms.utm_source = 'facebook'; utms.utm_medium = 'social'; }
-        else if (refHost.includes('instagram')) { utms.utm_source = 'instagram'; utms.utm_medium = 'social'; }
-        else if (refHost.includes('linkedin')) { utms.utm_source = 'linkedin'; utms.utm_medium = 'social'; }
-        else if (refHost.includes('youtube')) { utms.utm_source = 'youtube'; utms.utm_medium = 'video'; }
-        else if (refHost && !refHost.includes(window.location.hostname)) { utms.utm_source = refHost; utms.utm_medium = 'referral'; }
-      } catch (e) {}
+    // 4. Default values if not coming from an ad campaign
+    if (!utms.utm_source) {
+      if (document.referrer) {
+        try {
+          const refHost = new URL(document.referrer).hostname;
+          if (refHost.includes('google')) { utms.utm_source = 'Google Organic'; utms.utm_medium = 'Organic Search'; }
+          else if (refHost.includes('facebook') || refHost.includes('fb.me')) { utms.utm_source = 'Facebook'; utms.utm_medium = 'Social'; }
+          else if (refHost.includes('instagram')) { utms.utm_source = 'Instagram'; utms.utm_medium = 'Social'; }
+          else if (refHost.includes('linkedin')) { utms.utm_source = 'LinkedIn'; utms.utm_medium = 'Social'; }
+          else if (refHost.includes('youtube')) { utms.utm_source = 'YouTube'; utms.utm_medium = 'Video'; }
+          else if (refHost && !refHost.includes(window.location.hostname)) { utms.utm_source = refHost; utms.utm_medium = 'Referral'; }
+        } catch (e) {}
+      }
+      
+      if (!utms.utm_source) utms.utm_source = 'Direct / Website';
     }
+
+    if (!utms.utm_medium) utms.utm_medium = 'Website Form';
+    if (!utms.utm_campaign) utms.utm_campaign = 'Study USA LP';
 
     return utms;
   }
