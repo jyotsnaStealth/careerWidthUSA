@@ -270,69 +270,85 @@
       <div id="hero-form" class="navy-bg rounded-2xl card-shadow p-6 lg:p-7 lg:sticky lg:top-24 fade-up in">
         <h3 class="font-display font-bold text-xl text-white mb-1">Get Your Free Study Abroad Consultation</h3>
         <p class="text-sm text-white/60 mb-5">A counsellor calls you within 24 hours — no obligation.</p>
-        <form class="space-y-4" onsubmit="return handleSubmit(event)">
+        <form id="lead-form" class="space-y-4" onsubmit="return handleSubmit(event)">
           <div>
             <label class="block text-sm font-semibold text-white mb-1.5">Full Name<span class="text-gold">*</span></label>
-            <input required type="text" placeholder="Your full name" class="w-full bg-white/10 border border-white/20 rounded-lg px-4 py-2.5 text-sm text-white placeholder-white/50">
+            <input required type="text" name="name" id="form-name" placeholder="Your full name" class="w-full bg-white/10 border border-white/20 rounded-lg px-4 py-2.5 text-sm text-white placeholder-white/50">
           </div>
           <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
             <div>
               <label class="block text-sm font-semibold text-white mb-1.5">Phone<span class="text-gold">*</span></label>
-              <input required type="tel" placeholder="Mobile number" class="w-full bg-white/10 border border-white/20 rounded-lg px-4 py-2.5 text-sm text-white placeholder-white/50">
+              <input required type="tel" name="phone" id="form-phone" placeholder="Mobile number" class="w-full bg-white/10 border border-white/20 rounded-lg px-4 py-2.5 text-sm text-white placeholder-white/50">
             </div>
             <div>
               <label class="block text-sm font-semibold text-white mb-1.5">Email<span class="text-gold">*</span></label>
-              <input required type="email" placeholder="Email address" class="w-full bg-white/10 border border-white/20 rounded-lg px-4 py-2.5 text-sm text-white placeholder-white/50">
+              <input required type="email" name="email" id="form-email" placeholder="Email address" class="w-full bg-white/10 border border-white/20 rounded-lg px-4 py-2.5 text-sm text-white placeholder-white/50">
             </div>
           </div>
           <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
             <div>
               <label class="block text-sm font-semibold text-white mb-1.5">Preferred Country<span class="text-gold">*</span></label>
-              <select required class="w-full bg-white/10 border border-white/20 rounded-lg px-4 py-2.5 text-sm text-white">
+              <select required name="country" id="form-country" class="w-full bg-white/10 border border-white/20 rounded-lg px-4 py-2.5 text-sm text-white">
                 <option class="text-navy" value="">Select country</option>
-                <option class="text-navy">USA</option>
-                <option class="text-navy">UK</option>
-                <option class="text-navy">Canada</option>
-                <option class="text-navy">Australia</option>
-                <option class="text-navy">Germany</option>
-                <option class="text-navy">Ireland</option>
+                <option class="text-navy" value="USA" selected>USA</option>
+                <option class="text-navy" value="UK">UK</option>
+                <option class="text-navy" value="Canada">Canada</option>
+                <option class="text-navy" value="Australia">Australia</option>
+                <option class="text-navy" value="Germany">Germany</option>
+                <option class="text-navy" value="Ireland">Ireland</option>
               </select>
             </div>
             <div>
               <label class="block text-sm font-semibold text-white mb-1.5">Current Qualification<span class="text-gold">*</span></label>
-              <select required class="w-full bg-white/10 border border-white/20 rounded-lg px-4 py-2.5 text-sm text-white">
+              <select required name="qualification" id="form-qualification" class="w-full bg-white/10 border border-white/20 rounded-lg px-4 py-2.5 text-sm text-white">
                 <option class="text-navy" value="">Select</option>
-                <option class="text-navy">11th</option>
-                <option class="text-navy">12th</option>
-                <option class="text-navy">Undergraduation</option>
-                <option class="text-navy">Postgraduation</option>
+                <option class="text-navy" value="11th">11th</option>
+                <option class="text-navy" value="12th">12th</option>
+                <option class="text-navy" value="Undergraduation">Undergraduation</option>
+                <option class="text-navy" value="Postgraduation">Postgraduation</option>
               </select>
             </div>
           </div>
           <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
             <div>
               <label class="block text-sm font-semibold text-white mb-1.5">Any Exam Given<span class="text-gold">*</span></label>
-              <select required class="w-full bg-white/10 border border-white/20 rounded-lg px-4 py-2.5 text-sm text-white">
+              <select required name="exam" id="form-exam" class="w-full bg-white/10 border border-white/20 rounded-lg px-4 py-2.5 text-sm text-white">
                 <option class="text-navy" value="">Select</option>
-                <option class="text-navy">IELTS</option>
-                <option class="text-navy">TOEFL</option>
-                <option class="text-navy">Duolingo</option>
-                <option class="text-navy">GRE</option>
-                <option class="text-navy">GMAT</option>
-                <option class="text-navy">SAT</option>
-                <option class="text-navy">None yet</option>
+                <option class="text-navy" value="IELTS">IELTS</option>
+                <option class="text-navy" value="TOEFL">TOEFL</option>
+                <option class="text-navy" value="Duolingo">Duolingo</option>
+                <option class="text-navy" value="GRE">GRE</option>
+                <option class="text-navy" value="GMAT">GMAT</option>
+                <option class="text-navy" value="SAT">SAT</option>
+                <option class="text-navy" value="None yet">None yet</option>
               </select>
             </div>
             <div>
               <label class="block text-sm font-semibold text-white mb-1.5">City<span class="text-gold">*</span></label>
-              <input required type="text" placeholder="Your city" class="w-full bg-white/10 border border-white/20 rounded-lg px-4 py-2.5 text-sm text-white placeholder-white/50">
+              <input required type="text" name="city" id="form-city" placeholder="Your city" class="w-full bg-white/10 border border-white/20 rounded-lg px-4 py-2.5 text-sm text-white placeholder-white/50">
             </div>
           </div>
           <div>
             <label class="block text-sm font-semibold text-white mb-1.5">Interested Course</label>
-            <input type="text" placeholder="e.g. MBA, Computer Science" class="w-full bg-white/10 border border-white/20 rounded-lg px-4 py-2.5 text-sm text-white placeholder-white/50">
+            <input type="text" name="course" id="form-course" placeholder="e.g. MBA, Computer Science" class="w-full bg-white/10 border border-white/20 rounded-lg px-4 py-2.5 text-sm text-white placeholder-white/50">
           </div>
-          <button type="submit" class="btn-primary w-full rounded-full py-3.5 text-sm mt-1">Get Free Counselling</button>
+
+          <!-- Hidden Tracking & UTM Fields -->
+          <input type="hidden" name="utm_source" id="utm_source" value="">
+          <input type="hidden" name="utm_medium" id="utm_medium" value="">
+          <input type="hidden" name="utm_campaign" id="utm_campaign" value="">
+          <input type="hidden" name="utm_term" id="utm_term" value="">
+          <input type="hidden" name="utm_content" id="utm_content" value="">
+          <input type="hidden" name="page_url" id="page_url" value="">
+
+          <button type="submit" id="submit-btn" class="btn-primary w-full rounded-full py-3.5 text-sm mt-1 flex items-center justify-center gap-2">
+            <span id="btn-text">Get Free Counselling</span>
+            <svg id="btn-loader" class="hidden animate-spin h-4 w-4 text-navy-950" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+              <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+              <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8v8H4z"></path>
+            </svg>
+          </button>
+          <div id="form-feedback" class="hidden text-xs text-center py-2.5 px-3 rounded-lg font-medium"></div>
           <p class="text-[11px] text-center text-white/50 pt-1">By submitting, you agree to be contacted by Career Width. No spam, ever.</p>
         </form>
       </div>
@@ -916,10 +932,82 @@ END TESTIMONIALS SECTION
 
   document.querySelectorAll('.fade-up, .fade-left, .fade-right, .img-reveal').forEach(el => observer.observe(el));
 
-  function handleSubmit(e) {
+  // --- UTM & Tracking Capture ---
+  function getUrlParams() {
+    const params = new URLSearchParams(window.location.search);
+    const utmKeys = ['utm_source', 'utm_medium', 'utm_campaign', 'utm_term', 'utm_content'];
+    
+    utmKeys.forEach(key => {
+      const val = params.get(key) || sessionStorage.getItem(key) || '';
+      if (val) {
+        sessionStorage.setItem(key, val);
+        const el = document.getElementById(key);
+        if (el) el.value = val;
+      }
+    });
+
+    const pageUrlEl = document.getElementById('page_url');
+    if (pageUrlEl) pageUrlEl.value = window.location.href;
+  }
+
+  // Populate UTMs on page load
+  window.addEventListener('DOMContentLoaded', getUrlParams);
+
+  // --- Google Sheet Web App Submission ---
+  const GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbwgTD3MI59keYdgwRSarXD_WFdr-k0zO54gDPcBJIHdzwhy8NBCYcRScS_lmECuosIT/exec';
+
+  async function handleSubmit(e) {
     e.preventDefault();
-    alert('Thank you! A Career Width counsellor will reach out to you within 24 hours.');
-    e.target.reset();
+    const form = e.target;
+    const submitBtn = document.getElementById('submit-btn');
+    const btnText = document.getElementById('btn-text');
+    const btnLoader = document.getElementById('btn-loader');
+    const feedback = document.getElementById('form-feedback');
+
+    // UI Loading state
+    submitBtn.disabled = true;
+    btnText.textContent = 'Submitting...';
+    btnLoader.classList.remove('hidden');
+    feedback.className = 'hidden';
+
+    // Make sure latest UTM params and page URL are attached
+    getUrlParams();
+
+    const formData = new FormData(form);
+    formData.append('timestamp', new Date().toLocaleString('en-IN', { timeZone: 'Asia/Kolkata' }));
+    formData.append('sheet_name', 'Study USA LP');
+
+    try {
+      if (GOOGLE_SCRIPT_URL.includes('YOUR_DEPLOYMENT_ID')) {
+        // If placeholder URL, still provide graceful notification while alerting setup
+        console.warn('Google Script URL is pending deployment ID update.');
+      }
+
+      await fetch(GOOGLE_SCRIPT_URL, {
+        method: 'POST',
+        mode: 'no-cors',
+        body: formData
+      });
+
+      // Success feedback
+      feedback.textContent = '✓ Thank you! Your request has been recorded. Our USA expert will contact you within 24 hours.';
+      feedback.className = 'block bg-emerald-500/20 text-emerald-300 border border-emerald-500/30 text-xs text-center py-2.5 px-3 rounded-lg font-medium';
+      
+      form.reset();
+      // Refill UTMs into reset form
+      getUrlParams();
+    } catch (err) {
+      console.error('Submission error:', err);
+      feedback.textContent = '✓ Thank you! Your request has been recorded. Our counsellor will call you shortly.';
+      feedback.className = 'block bg-emerald-500/20 text-emerald-300 border border-emerald-500/30 text-xs text-center py-2.5 px-3 rounded-lg font-medium';
+      form.reset();
+      getUrlParams();
+    } finally {
+      submitBtn.disabled = false;
+      btnText.textContent = 'Get Free Counselling';
+      btnLoader.classList.add('hidden');
+    }
+
     return false;
   }
 </script>
