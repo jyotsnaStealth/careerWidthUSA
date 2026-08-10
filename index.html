@@ -288,15 +288,10 @@
           <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
             <div>
               <label class="block text-sm font-semibold text-white mb-1.5">Preferred Country<span class="text-gold">*</span></label>
-              <select required name="country" id="form-country" class="w-full bg-white/10 border border-white/20 rounded-lg px-4 py-2.5 text-sm text-white">
-                <option class="text-navy" value="">Select country</option>
-                <option class="text-navy" value="USA" selected>USA</option>
-                <option class="text-navy" value="UK">UK</option>
-                <option class="text-navy" value="Canada">Canada</option>
-                <option class="text-navy" value="Australia">Australia</option>
-                <option class="text-navy" value="Germany">Germany</option>
-                <option class="text-navy" value="Ireland">Ireland</option>
-              </select>
+              <div class="relative">
+                <input type="text" name="country" id="form-country" value="USA" readonly class="w-full bg-white/10 border border-white/20 rounded-lg px-4 py-2.5 text-sm text-white font-medium cursor-not-allowed select-none focus:outline-none pr-8">
+                <span class="absolute right-3 top-1/2 -translate-y-1/2 text-white/50 text-xs">🔒</span>
+              </div>
             </div>
             <div>
               <label class="block text-sm font-semibold text-white mb-1.5">Current Qualification<span class="text-gold">*</span></label>
