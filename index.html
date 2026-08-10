@@ -1195,23 +1195,41 @@ END TESTIMONIALS SECTION
     btnLoader.classList.remove('hidden');
     feedback.className = 'hidden';
 
-    // Make sure latest UTM params and page URL are attached
+    // Ensure latest UTM params and page URL are attached
     getUrlParams();
 
     const formData = new FormData(form);
-    formData.append('timestamp', new Date().toLocaleString('en-IN', { timeZone: 'Asia/Kolkata' }));
-    formData.append('sheet_name', 'Study USA LP');
+    const postData = new URLSearchParams();
+    for (const [key, value] of formData.entries()) {
+      postData.append(key, value);
+    }
+
+    // Explicitly ensure UTM parameters are populated
+    const utmKeys = ['utm_source', 'utm_medium', 'utm_campaign', 'utm_term', 'utm_content'];
+    const currentUrlParams = new URLSearchParams(window.location.search);
+    utmKeys.forEach(k => {
+      let val = currentUrlParams.get(k) || localStorage.getItem(k) || sessionStorage.getItem(k) || '';
+      if (!val) {
+        for (const [uk, uv] of currentUrlParams.entries()) {
+          if (uk.toLowerCase() === k.toLowerCase()) { val = uv; break; }
+        }
+      }
+      if (val) postData.set(k, val);
+    });
+
+    postData.set('country', 'USA');
+    postData.set('page_url', window.location.href);
+    postData.set('timestamp', new Date().toLocaleString('en-IN', { timeZone: 'Asia/Kolkata' }));
+    postData.set('sheet_name', 'Study USA LP');
 
     try {
-      if (GOOGLE_SCRIPT_URL.includes('YOUR_DEPLOYMENT_ID')) {
-        // If placeholder URL, still provide graceful notification while alerting setup
-        console.warn('Google Script URL is pending deployment ID update.');
-      }
-
       await fetch(GOOGLE_SCRIPT_URL, {
         method: 'POST',
         mode: 'no-cors',
-        body: formData
+        headers: {
+          'Content-Type': 'application/x-www-form-urlencoded'
+        },
+        body: postData.toString()
       });
 
       // Success feedback
