@@ -1128,15 +1128,43 @@ END TESTIMONIALS SECTION
 
   document.querySelectorAll('.fade-up, .fade-left, .fade-right, .img-reveal').forEach(el => observer.observe(el));
 
-  // --- UTM & Tracking Capture ---
+  // --- Smart UTM & Tracking Capture ---
   function getUrlParams() {
-    const params = new URLSearchParams(window.location.search);
+    const searchParams = new URLSearchParams(window.location.search);
+    const hashParams = new URLSearchParams(window.location.hash.includes('?') ? window.location.hash.split('?')[1] : '');
+    
+    // Normalize parameter reading (case-insensitive support)
+    function getParam(name) {
+      for (const [k, v] of searchParams.entries()) {
+        if (k.toLowerCase() === name.toLowerCase()) return v;
+      }
+      for (const [k, v] of hashParams.entries()) {
+        if (k.toLowerCase() === name.toLowerCase()) return v;
+      }
+      return localStorage.getItem(name) || sessionStorage.getItem(name) || '';
+    }
+
     const utmKeys = ['utm_source', 'utm_medium', 'utm_campaign', 'utm_term', 'utm_content'];
     
     utmKeys.forEach(key => {
-      const val = params.get(key) || sessionStorage.getItem(key) || '';
+      let val = getParam(key);
+      
+      // Smart Referrer fallback if no UTM source is provided
+      if (key === 'utm_source' && !val && document.referrer) {
+        try {
+          const refHost = new URL(document.referrer).hostname;
+          if (refHost.includes('google')) val = 'google-organic';
+          else if (refHost.includes('facebook') || refHost.includes('fb.me')) val = 'facebook-organic';
+          else if (refHost.includes('instagram')) val = 'instagram-organic';
+          else if (refHost.includes('linkedin')) val = 'linkedin-organic';
+          else if (refHost.includes('youtube')) val = 'youtube-organic';
+          else if (refHost && !refHost.includes(window.location.hostname)) val = refHost;
+        } catch (e) {}
+      }
+
       if (val) {
         sessionStorage.setItem(key, val);
+        localStorage.setItem(key, val);
         const el = document.getElementById(key);
         if (el) el.value = val;
       }
@@ -1146,8 +1174,9 @@ END TESTIMONIALS SECTION
     if (pageUrlEl) pageUrlEl.value = window.location.href;
   }
 
-  // Populate UTMs on page load
+  // Populate UTMs on page load & on hash change
   window.addEventListener('DOMContentLoaded', getUrlParams);
+  window.addEventListener('hashchange', getUrlParams);
 
   // --- Google Sheet Web App Submission ---
   const GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbwgTD3MI59keYdgwRSarXD_WFdr-k0zO54gDPcBJIHdzwhy8NBCYcRScS_lmECuosIT/exec';
