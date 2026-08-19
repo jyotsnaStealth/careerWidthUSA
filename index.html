@@ -304,7 +304,7 @@
           <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
             <div>
               <label class="block text-sm font-semibold text-white mb-1.5">Phone<span class="text-gold">*</span></label>
-              <input required type="tel" name="phone" id="form-phone" placeholder="10-digit mobile number" minlength="10" maxlength="13" pattern="^(\+?91|0)?[6-9][0-9]{9}$" title="Please enter a valid 10-digit Indian mobile number" oninput="this.value = this.value.replace(/[^0-9+]/g, '')" class="w-full bg-white/10 border border-white/20 rounded-lg px-4 py-2.5 text-sm text-white placeholder-white/50">
+              <input required type="tel" name="phone" id="form-phone" placeholder="10-digit mobile number" minlength="10" maxlength="10" pattern="[6-9][0-9]{9}" title="Please enter a valid 10-digit mobile number" oninput="this.value = this.value.replace(/[^0-9]/g, '').substring(0, 10)" class="w-full bg-white/10 border border-white/20 rounded-lg px-4 py-2.5 text-sm text-white placeholder-white/50">
             </div>
             <div>
               <label class="block text-sm font-semibold text-white mb-1.5">Email<span class="text-gold">*</span></label>
@@ -1316,17 +1316,9 @@ END TESTIMONIALS SECTION
     const phoneInput = form.querySelector('[name="phone"]');
     const phoneVal = phoneInput ? phoneInput.value.trim() : '';
     
-    // Clean any spaces, hyphens, parentheses, or +91 / 91 / 0 prefix
-    let cleanedPhone = phoneVal.replace(/[\s\-\(\)\+]/g, '');
-    if (cleanedPhone.startsWith('91') && cleanedPhone.length === 12) {
-      cleanedPhone = cleanedPhone.substring(2);
-    } else if (cleanedPhone.startsWith('0') && cleanedPhone.length === 11) {
-      cleanedPhone = cleanedPhone.substring(1);
-    }
-    
     const phonePattern = /^[6-9][0-9]{9}$/;
-    if (!phonePattern.test(cleanedPhone)) {
-      feedback.textContent = '❌ Please enter a valid 10-digit Indian mobile number.';
+    if (!phonePattern.test(phoneVal)) {
+      feedback.textContent = '❌ Please enter a valid 10-digit mobile number.';
       feedback.className = 'block bg-rose-500/20 text-rose-300 border border-rose-500/30 text-xs text-center py-2.5 px-3 rounded-lg font-medium';
       return false;
     }
@@ -1358,7 +1350,7 @@ END TESTIMONIALS SECTION
     const payload = {
       timestamp: new Date().toLocaleString('en-IN', { timeZone: 'Asia/Kolkata' }),
       name: nameVal,
-      phone: cleanedPhone,
+      phone: phoneVal,
       email: emailVal,
       country: 'USA',
       qualification: form.querySelector('[name="qualification"]')?.value || '',
