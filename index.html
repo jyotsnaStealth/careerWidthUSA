@@ -1349,6 +1349,7 @@ END TESTIMONIALS SECTION
     // Construct full payload
     const payload = {
       timestamp: new Date().toLocaleString('en-IN', { timeZone: 'Asia/Kolkata' }),
+      sheet_name: 'Study USA LP',
       name: nameVal,
       phone: phoneVal,
       email: emailVal,
@@ -1361,7 +1362,8 @@ END TESTIMONIALS SECTION
       utm_medium: utms.utm_medium || '',
       utm_campaign: utms.utm_campaign || '',
       utm_term: utms.utm_term || '',
-      utm_content: utms.utm_content || ''
+      utm_content: utms.utm_content || '',
+      page_url: window.location.href
     };
 
     // Dual delivery: Append as URL query parameters AND send JSON body for 100% Google Apps Script reliability
