@@ -299,12 +299,12 @@
         <form id="lead-form" class="space-y-4" onsubmit="return handleSubmit(event)">
           <div>
             <label class="block text-sm font-semibold text-white mb-1.5">Full Name<span class="text-gold">*</span></label>
-            <input required type="text" name="name" id="form-name" placeholder="Your full name" class="w-full bg-white/10 border border-white/20 rounded-lg px-4 py-2.5 text-sm text-white placeholder-white/50">
+            <input required type="text" name="name" id="form-name" placeholder="Your full name" oninput="this.value = this.value.replace(/[^a-zA-Z\s]/g, '')" class="w-full bg-white/10 border border-white/20 rounded-lg px-4 py-2.5 text-sm text-white placeholder-white/50">
           </div>
           <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
             <div>
               <label class="block text-sm font-semibold text-white mb-1.5">Phone<span class="text-gold">*</span></label>
-              <input required type="tel" name="phone" id="form-phone" placeholder="Mobile number" class="w-full bg-white/10 border border-white/20 rounded-lg px-4 py-2.5 text-sm text-white placeholder-white/50">
+              <input required type="tel" name="phone" id="form-phone" placeholder="10-digit mobile number" minlength="10" maxlength="13" pattern="^(\+?91|0)?[6-9][0-9]{9}$" title="Please enter a valid 10-digit Indian mobile number" oninput="this.value = this.value.replace(/[^0-9+]/g, '')" class="w-full bg-white/10 border border-white/20 rounded-lg px-4 py-2.5 text-sm text-white placeholder-white/50">
             </div>
             <div>
               <label class="block text-sm font-semibold text-white mb-1.5">Email<span class="text-gold">*</span></label>
@@ -1300,10 +1300,50 @@ END TESTIMONIALS SECTION
   async function handleSubmit(e) {
     e.preventDefault();
     const form = e.target;
+    const feedback = document.getElementById('form-feedback');
+
+    // 1. Name validation
+    const nameInput = form.querySelector('[name="name"]');
+    const nameVal = nameInput ? nameInput.value.trim() : '';
+    const namePattern = /^[a-zA-Z\s]{2,50}$/;
+    if (!namePattern.test(nameVal)) {
+      feedback.textContent = '❌ Please enter a valid name (letters only, min 2 characters).';
+      feedback.className = 'block bg-rose-500/20 text-rose-300 border border-rose-500/30 text-xs text-center py-2.5 px-3 rounded-lg font-medium';
+      return false;
+    }
+
+    // 2. Phone validation
+    const phoneInput = form.querySelector('[name="phone"]');
+    const phoneVal = phoneInput ? phoneInput.value.trim() : '';
+    
+    // Clean any spaces, hyphens, parentheses, or +91 / 91 / 0 prefix
+    let cleanedPhone = phoneVal.replace(/[\s\-\(\)\+]/g, '');
+    if (cleanedPhone.startsWith('91') && cleanedPhone.length === 12) {
+      cleanedPhone = cleanedPhone.substring(2);
+    } else if (cleanedPhone.startsWith('0') && cleanedPhone.length === 11) {
+      cleanedPhone = cleanedPhone.substring(1);
+    }
+    
+    const phonePattern = /^[6-9][0-9]{9}$/;
+    if (!phonePattern.test(cleanedPhone)) {
+      feedback.textContent = '❌ Please enter a valid 10-digit Indian mobile number.';
+      feedback.className = 'block bg-rose-500/20 text-rose-300 border border-rose-500/30 text-xs text-center py-2.5 px-3 rounded-lg font-medium';
+      return false;
+    }
+
+    // 3. Email validation
+    const emailInput = form.querySelector('[name="email"]');
+    const emailVal = emailInput ? emailInput.value.trim() : '';
+    const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailPattern.test(emailVal)) {
+      feedback.textContent = '❌ Please enter a valid email address.';
+      feedback.className = 'block bg-rose-500/20 text-rose-300 border border-rose-500/30 text-xs text-center py-2.5 px-3 rounded-lg font-medium';
+      return false;
+    }
+
     const submitBtn = document.getElementById('submit-btn');
     const btnText = document.getElementById('btn-text');
     const btnLoader = document.getElementById('btn-loader');
-    const feedback = document.getElementById('form-feedback');
 
     // UI Loading state
     submitBtn.disabled = true;
@@ -1317,9 +1357,9 @@ END TESTIMONIALS SECTION
     // Construct full payload
     const payload = {
       timestamp: new Date().toLocaleString('en-IN', { timeZone: 'Asia/Kolkata' }),
-      name: form.querySelector('[name="name"]')?.value || '',
-      phone: form.querySelector('[name="phone"]')?.value || '',
-      email: form.querySelector('[name="email"]')?.value || '',
+      name: nameVal,
+      phone: cleanedPhone,
+      email: emailVal,
       country: 'USA',
       qualification: form.querySelector('[name="qualification"]')?.value || '',
       exam: form.querySelector('[name="exam"]')?.value || '',
